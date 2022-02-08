@@ -28,7 +28,7 @@ const Tile = ({ tile }) => {
 
   let classes = classArray.join(" ");
 
-  return <span className={classes}> </span>;
+  return <span className={classes}>{tile.value}</span>;
 };
 
 export default Tile;

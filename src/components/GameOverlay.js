@@ -20,9 +20,7 @@ const GameOverlay = ({ onRestart, board }) => {
     );
   }
 
-  return (
-    null
-  );
+  return null;
 };
 
 export default GameOverlay;
