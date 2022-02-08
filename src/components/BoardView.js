@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Tile from "./Tile";
 import Cell from "./Cell";
+import GameOverlay from "./GameOverlay";
 import { Board } from "../helper";
 import useEvent from "../hooks/useEvent";
 
@@ -40,11 +41,23 @@ const BoardView = () => {
       return <Tile tile={tile} key={index} />;
     });
 
+  const resetGame = () => {
+    setBoard(new Board())
+  }
+
   return (
     <div>
+      <div className="details-box">
+        <div className="resetButton" onClick={resetGame}>New Game</div>
+        <div className="score-box">
+          <div className="score-header">SCORE</div>
+          <div>{board.score}</div>
+        </div>
+      </div>
       <div className="board">
         {cells}
         {tiles}
+        <GameOverlay onRestart={resetGame} board={board}/>
       </div>
     </div>
   );
