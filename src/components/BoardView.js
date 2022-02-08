@@ -9,23 +9,25 @@ const BoardView = () => {
 
     const cells = board.cells.map((row, rowIndex) => {
         return (
-            <div>
+            <div key={rowIndex}>
                 {row.map((col, colIndex) => {
-                    return <Cell/>
+                    return <Cell key={rowIndex * board.size + colIndex}/>
                 })}
             </div>
         )
     })
 
     const tiles = board.tiles.filter((tile) => (tile.value !== 0)).map((tile, index) => {
-        return <Tile/>
+        return <Tile tile={tile} key={index}/>
     })
 
 
     return (
         <div>
-            {cells}
-            {tiles}
+            <div className="board">
+                {cells}
+                {tiles}
+            </div>
         </div>
     )
 }
