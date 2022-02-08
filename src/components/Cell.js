@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Cell = () => {
-    return (
-        <span className="cell"></span>
-    )
-}
+  return <span className="cell"></span>;
+};
 
-export default Cell
+export default Cell;
